@@ -28,7 +28,7 @@ local tsserver_settings = {
 }
 
 return {
-	"neovim/nvim-lspconfig",
+  "neovim/nvim-lspconfig",
 	lazy = false,
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -42,7 +42,22 @@ return {
 			capabilities = capabilities,
 		})
 		lspconfig.lua_ls.setup({
-			capabilities = capabilities,
+      capabilities = capabilities,
+			autostart = false,
+			settings = {
+				Lua = {
+					format = {
+            enable = false,
+						defaultConfig = {},
+					},
+					diagnostics = {
+						globals = { "vim" },
+					},
+					workspace = {
+						library = vim.api.nvim_get_runtime_file("", true),
+					},
+				},
+			},
 		})
 		lspconfig.eslint.setup({
 			on_attach = function(client, bufnr)
