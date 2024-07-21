@@ -1,3 +1,3 @@
 require("mrtdh.settings")
-require("mrtdh.maps")
+require("mrtdh.keymaps")
 require("mrtdh.lazy")

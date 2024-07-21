@@ -33,5 +33,5 @@ map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
 
--- Dismiss Notification
-map("n", "<leader>nd", "<cmd>NoiceDismiss<CR>")
+-- Dismiss Noice
+map("n", "<leader>nd", "<CMD>NoiceDismiss<CR>")
