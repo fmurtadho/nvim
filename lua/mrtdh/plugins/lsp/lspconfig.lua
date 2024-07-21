@@ -1,3 +1,32 @@
+local tsserver_diagnostics = {
+	ignoredCodes = {
+		-- These can be found here:
+		-- https://github.com/microsoft/TypeScript/blob/master/src/compiler/diagnosticMessages.json
+
+		6133, -- "X Is declared but its value is enver read"
+		80001, -- "This is a CommonJS file"
+		80005, -- "This require may be converted to an import"
+		80006, -- "This may be converted to an async function"
+		7016, -- "Could not find a declaration file for module '{0}'. '{1}' implicitly has an 'any' type"
+	},
+}
+
+local tsserver_settings = {
+	-- NOTE: For whatever reason, these don't seem to be respected...
+	javascript = {
+		showUnused = false,
+		suggestionActions = {
+			enabled = false,
+		},
+	},
+	typescript = {
+		showUnused = false,
+	},
+
+	-- So for now ignore specific annoying ones
+	diagnostics = tsserver_diagnostics,
+}
+
 return {
 	"neovim/nvim-lspconfig",
 	lazy = false,
@@ -7,6 +36,7 @@ return {
 		local lspconfig = require("lspconfig")
 		lspconfig.tsserver.setup({
 			capabilities = capabilities,
+			settings = tsserver_settings,
 		})
 		lspconfig.html.setup({
 			capabilities = capabilities,
