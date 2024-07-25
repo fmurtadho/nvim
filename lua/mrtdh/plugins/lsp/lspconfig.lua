@@ -43,11 +43,11 @@ return {
 		})
 		lspconfig.lua_ls.setup({
       capabilities = capabilities,
-			autostart = false,
+			autostart = true,
 			settings = {
 				Lua = {
 					format = {
-            enable = false,
+            enable = true,
 						defaultConfig = {},
 					},
 					diagnostics = {

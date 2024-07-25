@@ -8,7 +8,7 @@ return {
 					{
 						"filename",
 						file_status = true,
-						path = 1,
+						path = 0,
 					},
 				},
 			},
