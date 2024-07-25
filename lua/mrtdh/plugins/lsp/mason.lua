@@ -11,7 +11,6 @@ return {
 			automatic_installation = true,
 			ensure_installed = {
 				"cssls",
-				"eslint-lsp",
 				"lua_ls",
 				"html",
 				"jsonls",
