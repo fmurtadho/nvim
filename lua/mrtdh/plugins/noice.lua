@@ -9,6 +9,12 @@ return {
 	},
 	config = function()
 		require("noice").setup({
+      cmdline = {
+        enabled = true
+      },
+      messages = {
+        enabled = true
+      },
 			lsp = {
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,

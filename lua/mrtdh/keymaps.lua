@@ -37,6 +37,7 @@ map("n", "<C-Down>", "<C-w>-")
 map("n", "<leader>nd", "<CMD>NoiceDismiss<CR>")
 
 -- Bufferline
-vim.keymap.set("n", "<leader>[", ":bp<CR>", { desc = "Buffer Previous" })
-vim.keymap.set("n", "<leader>]", ":bn<CR>", { desc = "Buffer Next" })
-vim.keymap.set("n", "<leader>z", "<cmd>BufferLineCloseOther<cr>", { desc = "Close Other Buffer" })
+vim.keymap.set("n", "<leader>[", ":bp<CR>", { silent = true, desc = "Buffer Previous" })
+vim.keymap.set("n", "<leader>]", ":bn<CR>", { silent = true, desc = "Buffer Next" })
+vim.keymap.set("n", "<leader>z", ":BufferLineCloseOther<CR>", { silent = true, desc = "Close Other Buffer" })
+vim.keymap.set("n", "<leader>bl", ":BufferLinePick<CR>", { silent = true, desc = "Jump Between Buffer" })
