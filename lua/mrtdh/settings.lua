@@ -14,7 +14,7 @@ o.encoding = "UTF-8"
 o.ruler = true
 o.mouse = "a"
 o.title = true
-o.hidden = true
+o.hidden = false
 o.ttimeoutlen = 0
 o.wildmenu = true
 o.showcmd = true
@@ -23,3 +23,4 @@ o.inccommand = "split"
 o.splitright = true
 o.splitbelow = true
 o.termguicolors = true
+
