@@ -8,13 +8,17 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	config = function()
+    -- workaround to hide error about highlight background color
+		require("notify").setup({
+			background_colour = "#000000",
+		})
 		require("noice").setup({
-      cmdline = {
-        enabled = true
-      },
-      messages = {
-        enabled = true
-      },
+			cmdline = {
+				enabled = true,
+			},
+			messages = {
+				enabled = true,
+			},
 			lsp = {
 				override = {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
