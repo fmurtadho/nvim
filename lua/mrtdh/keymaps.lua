@@ -36,7 +36,14 @@ map("n", "<C-Down>", "<C-w>-")
 -- Dismiss Noice
 map("n", "<leader>nd", "<CMD>NoiceDismiss<CR>")
 
+-- Function to close buffer and switch to the previous one
+local function close_buffer()
+  vim.cmd('bd')  -- Close the current buffer
+  vim.cmd('b#')  -- Switch to the previous buffer
+end
+
 -- Bufferline
+vim.keymap.set("n", "<leader>bc", close_buffer, { silent = true, desc = "Close Current Buffer and Switch to Previous" })
 vim.keymap.set("n", "<leader>[", ":bp<CR>", { silent = true, desc = "Buffer Previous" })
 vim.keymap.set("n", "<leader>]", ":bn<CR>", { silent = true, desc = "Buffer Next" })
 vim.keymap.set("n", "<leader>z", ":BufferLineCloseOther<CR>", { silent = true, desc = "Close Other Buffer" })
