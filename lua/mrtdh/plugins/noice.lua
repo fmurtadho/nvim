@@ -8,13 +8,35 @@ return {
 		"hrsh7th/nvim-cmp",
 	},
 	config = function()
-    -- workaround to hide error about highlight background color
+		-- workaround to hide error about highlight background color
 		require("notify").setup({
 			background_colour = "#000000",
 		})
 		require("noice").setup({
+			routes = {
+				{
+					filter = {
+						event = "msg_show",
+						kind = "",
+						find = "written",
+					},
+					opts = { skip = true },
+				},
+			},
 			cmdline = {
 				enabled = true,
+			},
+			views = {
+				cmdline_popup = {
+					border = {
+						style = "none",
+						padding = { 1, 2 },
+					},
+					filter_options = {},
+					win_options = {
+						winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+					},
+				},
 			},
 			messages = {
 				enabled = true,
